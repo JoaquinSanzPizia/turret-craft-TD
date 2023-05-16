@@ -183,8 +183,8 @@ TextureImporter:
       name: TurretParts_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 960
+        x: 96
+        y: 992
         width: 32
         height: 32
       alignment: 0
@@ -204,7 +204,7 @@ TextureImporter:
       name: TurretParts_4
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 960
         width: 32
         height: 32
@@ -225,7 +225,7 @@ TextureImporter:
       name: TurretParts_5
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 960
         width: 32
         height: 32
@@ -238,6 +238,216 @@ TextureImporter:
       bones: []
       spriteID: 8ed012cd80419624ca95c7faecc093b3
       internalID: -856401998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c57b2c2cd12db40ba9307c41ded31a
+      internalID: 1582557454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3bcb90421e00004eb842a07d9f70ebd
+      internalID: 1834916571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f0bec0683b5ea4e96ebcf059fd55ee
+      internalID: 2047152077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4d6c248f7dbad46b2effd2a7f3f44e
+      internalID: 74835245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e704a63b3514c844a0af769e413e507
+      internalID: 32618948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fabb664eaca42754f89bdac3acf3692f
+      internalID: 1712155160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68516c8c6b95c64dbc02dd08aebaef4
+      internalID: 1331225511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba608e58dce0df6419e7fdfeb015b9a4
+      internalID: 1211118692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f70e11e5e8dfa141abb63072593c7b0
+      internalID: -2042613095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretParts_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1b6c248e1da824d80ba36eccb938bc
+      internalID: 1212144861
       vertices: []
       indices: 
       edges: []
@@ -255,10 +465,20 @@ TextureImporter:
     nameFileIdTable:
       TurretParts_0: -1737287374
       TurretParts_1: -970484593
+      TurretParts_10: 32618948
+      TurretParts_11: 1712155160
+      TurretParts_12: 1331225511
+      TurretParts_13: 1211118692
+      TurretParts_14: -2042613095
+      TurretParts_15: 1212144861
       TurretParts_2: -981253008
       TurretParts_3: -562135916
       TurretParts_4: 15245460
       TurretParts_5: -856401998
+      TurretParts_6: 1582557454
+      TurretParts_7: 1834916571
+      TurretParts_8: 2047152077
+      TurretParts_9: 74835245
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

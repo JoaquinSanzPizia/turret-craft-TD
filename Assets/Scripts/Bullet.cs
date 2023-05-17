@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour, IPoolableObject
     public int tweenID;
     public int damage;
 
+    public bool pierces;
+
     [SerializeField] SphereCollider col;
 
     private void OnEnable()
@@ -26,10 +28,13 @@ public class Bullet : MonoBehaviour, IPoolableObject
         transform.SetParent(null);
     }
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        DisableBullet();
-    }*/
+        if (other.tag == "Enemy" && !pierces)
+        {
+            DisableBullet();
+        }
+    }
 
     public void DisableBullet()
     {

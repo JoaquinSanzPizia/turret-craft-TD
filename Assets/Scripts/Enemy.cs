@@ -16,8 +16,11 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
     private Transform originalPos;
 
+    public bool alive;
     public void OnObjectSpawn()
     {
+        gameObject.transform.localScale = Vector3.one;
+        alive = true;
         currentHealth = maxHealth;
         healthBarFill.GetComponent<Image>().fillAmount = 1;
 
@@ -25,6 +28,8 @@ public class Enemy : MonoBehaviour, IPoolableObject
         originalPos = transform;
         model.enabled = true;
         col.enabled = true;
+
+        LeanTween.scaleY(gameObject, 1.1f, 0.5f).setLoopPingPong();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,6 +57,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
     public void Die()
     {
+        alive = false;
         healthBar.SetActive(false);
         deathPS.Play();
         model.enabled = false;
@@ -61,5 +67,11 @@ public class Enemy : MonoBehaviour, IPoolableObject
         {
             gameObject.transform.localPosition = originalPos.position;
         });
+
+        TurretController[] turretControllers = FindObjectsOfType<TurretController>();
+        foreach (TurretController turret in turretControllers)
+        {
+            turret.enemies.Remove(gameObject);
+        }
     }
 }

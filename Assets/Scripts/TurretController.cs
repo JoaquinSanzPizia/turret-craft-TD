@@ -46,11 +46,13 @@ public class TurretController : MonoBehaviour
     public void Shoot()
     {
         canShoot = false;
-        Debug.Log("Shoot");
+
         LeanTween.moveLocalY(canon, -0.025f, 0.1f).setLoopPingPong(1);
         shootMuzzle.Play();
+
         GameObject bullet = pooler.SpawnFromPool("BulletSimple", shootPoint.transform.position, shootPoint.transform.rotation);
         Bullet bulletCs = bullet.GetComponent<Bullet>();
+        bulletCs.damage = damage;
 
         Vector3 direction = (enemies[0].transform.position - gameObject.transform.position).normalized;
 

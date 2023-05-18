@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour, IPoolableObject
     public Transform originalParent;
     public GameObject visual;
     public int tweenID;
-    public int damage;
+    public float damage;
 
     public bool pierces;
 

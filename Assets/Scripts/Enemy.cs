@@ -9,8 +9,8 @@ public class Enemy : MonoBehaviour, IPoolableObject
     [SerializeField] SphereCollider col;
     [SerializeField] ParticleSystem deathPS;
 
-    [SerializeField] int currentHealth;
-    [SerializeField] int maxHealth;
+    [SerializeField] float currentHealth;
+    [SerializeField] float maxHealth;
 
     [SerializeField] GameObject healthBarFill, healthBar;
 
@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
         }
     }
 
-    void GetHit(int damage)
+    void GetHit(float damage)
     {
         //LeanTween.cancel(gameObject);
         LeanTween.scale(gameObject, Vector3.one, 0f);

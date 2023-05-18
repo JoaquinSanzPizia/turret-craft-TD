@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f533855047d2f4abf3857ee1af2f46, type: 3}
-  m_Name: FastTurretBase
+  m_Script: {fileID: 11500000, guid: d22421e90dfd38444b3d64e6282b6e9c, type: 3}
+  m_Name: WaveCannon
   m_EditorClassIdentifier: 
-  damageMultiplier: 0.5
-  fireRateMultiplier: 2
+  bulletType: Wave
+  damage:
+  - 5
+  - 10
+  - 20
+  - 50
+  - 125

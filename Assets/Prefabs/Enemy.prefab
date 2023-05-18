@@ -14815,9 +14815,10 @@ MonoBehaviour:
   col: {fileID: 5882131914539826010}
   deathPS: {fileID: 962898528787532196}
   currentHealth: 0
-  maxHealth: 50
+  maxHealth: 100
   healthBarFill: {fileID: 5882131914201978662}
   healthBar: {fileID: 5882131915332060194}
+  alive: 0
 --- !u!135 &5882131914539826010
 SphereCollider:
   m_ObjectHideFlags: 0

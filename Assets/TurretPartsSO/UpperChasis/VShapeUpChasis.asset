@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f533855047d2f4abf3857ee1af2f46, type: 3}
-  m_Name: BalancedTurretBase
+  m_Script: {fileID: 11500000, guid: d7e57bb3f02e12448ab2fc78d58c4db8, type: 3}
+  m_Name: VShapeUpChasis
   m_EditorClassIdentifier: 
-  damageMultiplier: 1
-  fireRateMultiplier: 1
+  elementBoosts:
+  - 1
+  - 1.5
+  - 2.5
+  - 4
+  - 8
+  extraEffect: area damage

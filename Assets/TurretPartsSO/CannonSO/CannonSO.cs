@@ -7,4 +7,7 @@ public class CannonSO : ScriptableObject
 {
     public string bulletType;
     public float[] damage;
+    public float[] fireRateMultiplier;
+    public float[] rangeMultiplier;
+    public float[] bulletSpeedMultiplier;
 }

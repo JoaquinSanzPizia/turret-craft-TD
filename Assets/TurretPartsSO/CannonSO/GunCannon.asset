@@ -19,3 +19,21 @@ MonoBehaviour:
   - 40
   - 100
   - 250
+  fireRateMultiplier:
+  - 1.1
+  - 1.25
+  - 1.4
+  - 1.65
+  - 2
+  rangeMultiplier:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  bulletSpeedMultiplier:
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2

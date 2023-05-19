@@ -7,6 +7,7 @@ public class TurretAssembler : MonoBehaviour
     [SerializeField] TurretController turretController;
 
     [SerializeField] Color[] tierColors;
+    [SerializeField] Color[] elementColors;
     public enum Element { fire, ice, poison, lightning};
     public Element element;
 
@@ -24,7 +25,7 @@ public class TurretAssembler : MonoBehaviour
     public enum UChasisTier { common, uncommon, rare, epic, legendary }
     public UChasisTier uChasisTier;
 
-    public enum CannonType { gun, wave, sprinkle }
+    public enum CannonType { gun, wave, laser }
     [Header("[CANNON]")]
     public CannonType cannonType;
 
@@ -42,21 +43,22 @@ public class TurretAssembler : MonoBehaviour
     [SerializeField] CannonSO[] cannonsSO;
 
 
-    void Start()
+    void Awake()
     {
         AssembleTurret();
     }
 
     void AssembleTurret()
     {
-        GetLChasis();
-        GetUChasis();
-        GetCannon();
+        GetVisuals();
+        GetStats();
     }
 
-    void GetLChasis()
+    void GetVisuals()
     {
-        foreach(GameObject chasis in lChasis)
+        turretController.bulletColor = elementColors[((int)element)];
+
+        foreach (GameObject chasis in lChasis)
         {
             chasis.SetActive(false);
         }
@@ -64,14 +66,6 @@ public class TurretAssembler : MonoBehaviour
         lChasis[(int)lChasisType].SetActive(true);
         LeanTween.color(lChasis[(int)lChasisType].transform.GetChild(0).gameObject, tierColors[((int)lChasisTier)], 0f);
 
-        turretController.range = lChasisSO[((int)lChasisType)].rangeMultipliers[((int)lChasisTier)];
-        turretController.fireRate = lChasisSO[((int)lChasisType)].fireRateMultipliers[((int)lChasisTier)];
-
-        turretController.UpdateRangeSphere();
-    }
-
-    void GetUChasis()
-    {
         foreach (GameObject chasis in uChasis)
         {
             chasis.SetActive(false);
@@ -79,13 +73,8 @@ public class TurretAssembler : MonoBehaviour
 
         uChasis[(int)uChasisType].SetActive(true);
         LeanTween.color(uChasis[(int)uChasisType].transform.GetChild(0).gameObject, tierColors[((int)uChasisTier)], 0f);
+        LeanTween.color(uChasis[(int)uChasisType].transform.GetChild(1).gameObject, elementColors[((int)element)], 0f);
 
-        turretController.elementMultiplier = uChasisSO[((int)uChasisType)].elementBoosts[((int)uChasisTier)];
-        turretController.extraEffect = uChasisSO[((int)uChasisType)].extraEffect;
-    }
-
-    void GetCannon()
-    {
         foreach (GameObject cannon in cannons)
         {
             cannon.SetActive(false);
@@ -94,7 +83,23 @@ public class TurretAssembler : MonoBehaviour
         cannons[(int)cannonType].SetActive(true);
         LeanTween.color(cannons[(int)cannonType].transform.GetChild(0).gameObject, tierColors[((int)cannonTier)], 0f);
 
+        turretController.shootPoint = cannons[(int)cannonType].transform.GetChild(1).gameObject;
+    }
+
+    void GetStats()
+    {
+        turretController.elementMultiplier = uChasisSO[((int)uChasisType)].elementBoosts[((int)uChasisTier)];
+        turretController.extraEffect = uChasisSO[((int)uChasisType)].extraEffect;
+
+        turretController.range = lChasisSO[((int)lChasisType)].rangeMultipliers[((int)lChasisTier)] *
+                                 cannonsSO[((int)cannonType)].rangeMultiplier[((int)cannonTier)];
+        turretController.fireRate = lChasisSO[((int)lChasisType)].fireRateMultipliers[((int)lChasisTier)] *
+                                    cannonsSO[((int)cannonType)].fireRateMultiplier[((int)cannonTier)];
+
         turretController.damage = cannonsSO[((int)cannonType)].damage[((int)cannonTier)];
         turretController.bulletType = cannonsSO[((int)cannonType)].bulletType;
+        turretController.bulletSpeed = cannonsSO[((int)cannonType)].bulletSpeedMultiplier[((int)cannonTier)];
+
+        turretController.UpdateRangeSphere();
     }
 }

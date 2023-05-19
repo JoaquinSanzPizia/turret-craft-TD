@@ -17,22 +17,23 @@ public class TurretController : MonoBehaviour
     public string extraEffect;
 
     [Header("[COMPONENTS]")]
-    [SerializeField] GameObject shootPoint;
+    public GameObject shootPoint;
     [SerializeField] GameObject turretTop;
     [SerializeField] GameObject canon;
     [SerializeField] GameObject rangeSphere;
     public string bulletType;
     [SerializeField] SphereCollider rangeCol;
 
-    [SerializeField] ParticleSystem shootMuzzle;
-
     [SerializeField] ObjectPooler pooler;
+
+    public Color bulletColor;
 
     float lookingAngle;
     bool canShoot;
     private void OnEnable()
     {
         canShoot = true;
+        //rangeSphere.SetActive(false);
     }
     private void FixedUpdate()
     {
@@ -53,9 +54,9 @@ public class TurretController : MonoBehaviour
         canShoot = false;
 
         LeanTween.moveLocalY(canon, -0.025f, 0.1f).setLoopPingPong(1);
-        shootMuzzle.Play();
 
         GameObject bullet = pooler.SpawnFromPool($"{bulletType}", shootPoint.transform.position, shootPoint.transform.rotation);
+
         Bullet bulletCs = bullet.GetComponent<Bullet>();
         bulletCs.damage = damage;
 
@@ -76,11 +77,6 @@ public class TurretController : MonoBehaviour
     {
         rangeSphere.transform.localScale = new Vector3(range, range, range);
         rangeCol.radius = range / 2;
-    }
-
-    public void UpdateBulletType()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)

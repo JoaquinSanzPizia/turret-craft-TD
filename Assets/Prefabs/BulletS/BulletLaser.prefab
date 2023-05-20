@@ -14942,7 +14942,9 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.m_NumColorKeys
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8247018, guid: c83fb3ef04bb383408bb2064b89690b2, type: 3}
+    - {fileID: 11451680, guid: c83fb3ef04bb383408bb2064b89690b2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c83fb3ef04bb383408bb2064b89690b2, type: 3}
 --- !u!4 &2594826564871276460 stripped
 Transform:

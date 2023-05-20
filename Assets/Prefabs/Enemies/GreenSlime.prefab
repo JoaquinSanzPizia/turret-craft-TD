@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 5115980857599631755}
   - component: {fileID: 962898528787532196}
   - component: {fileID: 9029984871963595654}
-  - component: {fileID: 8816572076151897322}
-  - component: {fileID: 5279988130811314956}
   m_Layer: 0
   m_Name: DeathPS
   m_TagString: Untagged
@@ -1295,16 +1293,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.4198113, g: 0.7418267, b: 1, a: 1}
-        key1: {r: 0.23366857, g: 0.5410366, b: 0.8396226, a: 0}
-        key2: {r: 0.18396229, g: 0.5954509, b: 1, a: 0}
+        key0: {r: 0.5927218, g: 0.8867924, b: 0.5479708, a: 1}
+        key1: {r: 0, g: 1, b: 0, a: 0}
+        key2: {r: 1, g: 0.48927587, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 64186
+        ctime1: 65535
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -1320,7 +1318,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -4814,115 +4812,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!82 &8816572076151897322
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298088124955715648}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1fcfd83e3d859db4585f34930d88477c, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1.2693294
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!114 &5279988130811314956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298088124955715648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628ef9b0c7e4fd24db54868035e11237, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomPercent: 15
 --- !u!1 &2923440594076150472
 GameObject:
   m_ObjectHideFlags: 0
@@ -6214,16 +6103,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.4198113, g: 0.7418267, b: 1, a: 1}
-        key1: {r: 0.23366857, g: 0.5410366, b: 0.8396226, a: 0}
-        key2: {r: 0.18396229, g: 0.5954509, b: 1, a: 0}
+        key0: {r: 0.5512283, g: 0.9056604, b: 0.35457456, a: 1}
+        key1: {r: 0.44107008, g: 0.754717, b: 0.2171591, a: 1}
+        key2: {r: 1, g: 0.209, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 64186
+        ctime1: 65535
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -6239,7 +6128,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -9920,7 +9809,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0.4527885, g: 1, b: 0.39999998, a: 1}
-      maxColor: {r: 0.33333337, g: 0.60898256, b: 1, a: 1}
+      maxColor: {r: 0.44201395, g: 0.8113208, b: 0.22579211, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -11024,16 +10913,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.4198113, g: 0.7418267, b: 1, a: 1}
-        key1: {r: 0.23366857, g: 0.5410366, b: 0.8396226, a: 0}
-        key2: {r: 0.18396229, g: 0.5954509, b: 1, a: 0}
+        key0: {r: 0.7755682, g: 1, b: 0.75, a: 1}
+        key1: {r: 0.45025095, g: 1, b: 0.3254717, a: 1}
+        key2: {r: 1, g: 0.209, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 64186
+        ctime1: 65535
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -11049,7 +10938,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -14775,7 +14664,7 @@ GameObject:
   - component: {fileID: 5882131914539826010}
   - component: {fileID: 2120289446}
   m_Layer: 0
-  m_Name: BlueSlime
+  m_Name: GreenSlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14815,7 +14704,7 @@ MonoBehaviour:
   col: {fileID: 5882131914539826010}
   deathPS: {fileID: 962898528787532196}
   currentHealth: 0
-  maxHealth: 150
+  maxHealth: 50
   healthBarFill: {fileID: 5882131914201978662}
   healthBar: {fileID: 5882131915332060194}
   alive: 0
@@ -15061,7 +14950,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -703428996, guid: 7761b7c687f500d4cb40237467470ca3, type: 3}
+  m_Sprite: {fileID: 2096779642, guid: 7761b7c687f500d4cb40237467470ca3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

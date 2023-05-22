@@ -5,6 +5,8 @@ using UnityEngine.Rendering.Universal;
 
 public class Bullet : MonoBehaviour, IPoolableObject
 {
+    public enum Element { fire, ice, poison, lightning, steel}
+    public Element bulletElement;
     [SerializeField] TrailRenderer trailRenderer;
     public Transform originalParent;
     public GameObject visual;
@@ -19,6 +21,8 @@ public class Bullet : MonoBehaviour, IPoolableObject
 
     [SerializeField] SphereCollider col;
 
+    public int elementTier;
+
     private void OnEnable()
     {
         originalParent = transform.parent;
@@ -26,13 +30,16 @@ public class Bullet : MonoBehaviour, IPoolableObject
     }
     public void OnObjectSpawn()
     {
+        TurretController turret = originalParent.GetComponentInParent<TurretController>();
         visual.SetActive(true);
         trailRenderer.enabled = true;
         col.enabled = true;
         transform.SetParent(null);
         shootMuzzle[0].Play();
 
-        bulletColor = originalParent.GetComponentInParent<TurretController>().bulletColor;
+        bulletColor = turret.bulletColor;
+        bulletElement = (Element)(int)turret.element;
+        elementTier = turret.elementTier;
 
         SetParticleAndBulletColor();
     }

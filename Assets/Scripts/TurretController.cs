@@ -8,7 +8,9 @@ public class TurretController : MonoBehaviour
 
     [SerializeField] public List<GameObject> enemies = new List<GameObject>();
 
+    public enum Element { fire, ice, poison, lightning }
     [Header("[STATS]")]
+    public Element element;
     public float bulletSpeed;
     public float range;
     public float fireRate;
@@ -27,6 +29,7 @@ public class TurretController : MonoBehaviour
     [SerializeField] ObjectPooler pooler;
 
     public Color bulletColor;
+    public int elementTier;
 
     float lookingAngle;
     bool canShoot;

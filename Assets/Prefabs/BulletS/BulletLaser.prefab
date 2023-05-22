@@ -5000,6 +5000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8501f5d41e8a6b9409c3c811717dfe97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletElement: 1
   trailRenderer: {fileID: 3336388229191000180}
   originalParent: {fileID: 0}
   visual: {fileID: 4686537097772113059}

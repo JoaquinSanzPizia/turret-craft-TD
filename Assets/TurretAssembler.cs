@@ -8,11 +8,12 @@ public class TurretAssembler : MonoBehaviour
 
     [SerializeField] Color[] tierColors;
     [SerializeField] Color[] elementColors;
-    public enum Element { fire, ice, poison, lightning};
+    public enum Element { fire, ice, poison, lightning, steel};
     public Element element;
 
     public enum LChasisType { standart, assault, heavy}
     [Header("[LOWER CHASIS]")]
+    [Space]
     public LChasisType lChasisType;
 
     public enum LChasisTier { common, uncommon, rare, epic, legendary }
@@ -20,6 +21,7 @@ public class TurretAssembler : MonoBehaviour
 
     public enum UChasisType { compact, Vshape, assault }
     [Header("[UPPER CHASIS]")]
+    [Space]
     public UChasisType uChasisType;
 
     public enum UChasisTier { common, uncommon, rare, epic, legendary }
@@ -27,17 +29,20 @@ public class TurretAssembler : MonoBehaviour
 
     public enum CannonType { gun, wave, laser }
     [Header("[CANNON]")]
+    [Space]
     public CannonType cannonType;
 
     public enum CannonTier { common, uncommon, rare, epic, legendary }
     public CannonTier cannonTier;
 
     [Header("[PARTS GO]")]
+    [Space]
     [SerializeField] GameObject[] lChasis;
     [SerializeField] GameObject[] uChasis;
     [SerializeField] GameObject[] cannons;
 
     [Header("[PARTS SO]")]
+    [Space]
     [SerializeField] LowerChasisSO[] lChasisSO;
     [SerializeField] UpperChasisSO[] uChasisSO;
     [SerializeField] CannonSO[] cannonsSO;
@@ -99,6 +104,9 @@ public class TurretAssembler : MonoBehaviour
         turretController.damage = cannonsSO[((int)cannonType)].damage[((int)cannonTier)];
         turretController.bulletType = cannonsSO[((int)cannonType)].bulletType;
         turretController.bulletSpeed = cannonsSO[((int)cannonType)].bulletSpeedMultiplier[((int)cannonTier)];
+
+        turretController.element = (TurretController.Element)(Element)((int)element);
+        turretController.elementTier = ((int)uChasisTier);
 
         turretController.UpdateRangeSphere();
     }

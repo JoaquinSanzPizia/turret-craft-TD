@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -246,19 +246,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: element
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
-      propertyPath: cannonTier
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
+      propertyPath: cannonTier
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: cannonType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: lChasisTier
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: lChasisType
@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: uChasisTier
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: uChasisType
@@ -3194,8 +3194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52d74e21c1df044498d3e7aa5dacafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allEnemies: []
   enemyPath: {fileID: 1098179543}
-  spawnDelay: 2
+  spawnDelay: 0.5
   slimeAmount: 4
   pooler: {fileID: 1398773455}
 --- !u!4 &1763117464

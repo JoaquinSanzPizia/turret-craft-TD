@@ -24,4 +24,9 @@ public class DebuffDataSO : ScriptableObject
     [Space]
     public float[] slowPower;
     public float[] slowTime;
+
+    [Header("==LIGHNING==")]
+    [Space]
+    public float[] lightningDamage;
+    public float[] lightningCooldown;
 }

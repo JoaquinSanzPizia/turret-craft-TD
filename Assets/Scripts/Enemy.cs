@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IPoolableObject
 {
+    [SerializeField] EnemySpawner enemySpawner;
     [SerializeField] SpriteRenderer model;
     [SerializeField] SphereCollider col;
     [SerializeField] ParticleSystem deathPS;
@@ -25,8 +26,10 @@ public class Enemy : MonoBehaviour, IPoolableObject
     public float poisonDmg;
     bool poisoned;
     bool onFire;
+    int enemyIndex;
     public void OnObjectSpawn()
     {
+        enemySpawner = FindObjectOfType<EnemySpawner>();
         gameObject.transform.localScale = Vector3.one;
         alive = true;
         currentHealth = maxHealth;
@@ -40,15 +43,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
         LeanTween.scaleY(gameObject, 1.1f, 0.5f).setLoopPingPong();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Bullet")
-        {
-            GetHit(other.GetComponent<Bullet>().damage, other.GetComponent<Bullet>());
-        }
-    }
-
-    void GetHit(float damage, Bullet bullet)
+    public void GetHit(float damage, Bullet bullet)
     {
         LeanTween.scale(gameObject, Vector3.one, 0f);
 
@@ -81,9 +76,11 @@ public class Enemy : MonoBehaviour, IPoolableObject
     void TriggerElementEffect(Bullet bullet)
     {
         DebuffDataSO debuffDataSO = GameManager.Instance.debuffData;
+        TurretController turret = bullet.originalParent.GetComponentInParent<TurretController>();
 
         switch (bullet.bulletElement)
         {
+            //==FIRE==
             case Bullet.Element.fire:
                 if (onFire)
                 {
@@ -96,10 +93,14 @@ public class Enemy : MonoBehaviour, IPoolableObject
                 }
                 break;
 
+            //==STEEL==
             case Bullet.Element.steel:
+
                 GetHit(debuffDataSO.bonusDamage[bullet.elementTier], null);
+
                 break;
 
+            //==POISON==
             case Bullet.Element.poison:
                 if (poisoned)
                 {
@@ -109,6 +110,34 @@ public class Enemy : MonoBehaviour, IPoolableObject
                 {
                     StartCoroutine(Poison());
                     poisoned = true;
+                }
+                break;
+
+            //==LIGHTNING==
+            case Bullet.Element.lightning:
+
+                if (bullet.canShock)
+                {
+                    for (int i = 0; i < enemySpawner.allEnemies.Count; i++)
+                    {
+                        if (enemySpawner.allEnemies[i] == gameObject)
+                        {
+                            enemyIndex = i;
+                        }
+                    }
+
+                    if (enemyIndex == 0)
+                    {
+                        enemySpawner.allEnemies[enemyIndex + 1].GetComponent<Enemy>().GetHit(bullet.damage * (1 + debuffDataSO.lightningDamage[bullet.elementTier]), null);
+                        enemySpawner.allEnemies[enemyIndex + 2].GetComponent<Enemy>().GetHit(bullet.damage * (1 + debuffDataSO.lightningDamage[bullet.elementTier]), null);
+                    }
+                    else
+                    {
+                        enemySpawner.allEnemies[enemyIndex + 1].GetComponent<Enemy>().GetHit(bullet.damage * (1 + debuffDataSO.lightningDamage[bullet.elementTier]), null);
+                        enemySpawner.allEnemies[enemyIndex - 1].GetComponent<Enemy>().GetHit(bullet.damage * (1 + debuffDataSO.lightningDamage[bullet.elementTier]), null);
+                    }
+
+                    elementPS[2].Play();
                 }
                 break;
         }
@@ -147,6 +176,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
     public void Die()
     {
+        enemySpawner.allEnemies.Remove(gameObject);
         alive = false;
         healthBar.SetActive(false);
         deathPS.Play();

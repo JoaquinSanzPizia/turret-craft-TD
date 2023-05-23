@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletType: Laser
   damage:
-  - 20
-  - 40
-  - 80
-  - 200
-  - 500
+  - 35
+  - 75
+  - 150
+  - 250
+  - 800
   fireRateMultiplier:
-  - 0.5
+  - 0.35
+  - 0.4
+  - 0.45
   - 0.55
-  - 0.6
   - 0.7
-  - 0.8
   rangeMultiplier:
   - 1.1
   - 1.25

@@ -7,6 +7,7 @@ public class TurretController : MonoBehaviour
     [SerializeField] TurretAssembler turretAssembler;
 
     [SerializeField] public List<GameObject> enemies = new List<GameObject>();
+    [SerializeField] public GameObject currentTarget;
 
     public enum Element { fire, ice, poison, lightning }
     [Header("[STATS]")]
@@ -33,9 +34,14 @@ public class TurretController : MonoBehaviour
 
     float lookingAngle;
     bool canShoot;
+    bool canShock;
     private void OnEnable()
     {
         canShoot = true;
+        if (element == Element.lightning)
+        {
+            canShock = true;
+        }
         //rangeSphere.SetActive(false);
     }
     private void FixedUpdate()
@@ -54,6 +60,7 @@ public class TurretController : MonoBehaviour
     }
     public void Shoot()
     {
+        currentTarget = enemies[0];
         canShoot = false;
 
         LeanTween.moveLocalY(canon, -0.025f, 0.1f).setLoopPingPong(1);
@@ -63,7 +70,15 @@ public class TurretController : MonoBehaviour
         Bullet bulletCs = bullet.GetComponent<Bullet>();
         bulletCs.damage = damage;
 
-        Vector3 direction = (enemies[0].transform.position - gameObject.transform.position).normalized;
+        if (element == Element.lightning && canShock)
+        {
+            bulletCs.canShock = true;
+            canShock = false;
+
+            StartCoroutine(LightningCooldown());
+        }
+
+        Vector3 direction = (currentTarget.transform.position - gameObject.transform.position).normalized;
 
         bulletCs.tweenID = LeanTween.move(bullet, shootPoint.transform.position + (direction * range), 1f / bulletSpeed).setOnComplete(() =>
         {
@@ -74,6 +89,14 @@ public class TurretController : MonoBehaviour
         {
             canShoot = true;
         });
+    }
+
+    IEnumerator LightningCooldown()
+    {
+        yield return new WaitForSeconds(GameManager.Instance.debuffData.lightningCooldown[elementTier]);
+
+        canShock = true;
+        Debug.Log("Lightning Ready");
     }
 
     public void UpdateRangeSphere()

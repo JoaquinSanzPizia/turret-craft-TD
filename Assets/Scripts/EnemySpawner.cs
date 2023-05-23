@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] public List<GameObject> allEnemies = new List<GameObject>();
     [SerializeField] LeanTweenPath enemyPath;
     [SerializeField] float spawnDelay;
     [SerializeField] int slimeAmount;
@@ -19,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
     {
         int randomSlime = Random.Range(0, slimeAmount);
         GameObject newEnemy = pooler.SpawnFromPool($"{randomSlime}", transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0f), transform.rotation);
+        allEnemies.Add(newEnemy);
 
         LeanTween.move(newEnemy, enemyPath.vec3, 20f).setOnComplete(() => 
         {

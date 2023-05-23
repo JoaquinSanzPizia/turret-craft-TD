@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour, IPoolableObject
     [SerializeField] SphereCollider col;
 
     public int elementTier;
+    public bool canShock;
 
     private void OnEnable()
     {
@@ -65,9 +66,18 @@ public class Bullet : MonoBehaviour, IPoolableObject
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy" && !pierces)
+        if (other.tag == "Enemy")
         {
-            DisableBullet();
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            if (pierces)
+            {
+                if (enemy.alive) enemy.GetHit(damage, gameObject.GetComponent<Bullet>());
+            }
+            if (!pierces && other.gameObject == originalParent.GetComponentInParent<TurretController>().currentTarget)
+            {
+                if (enemy.alive) enemy.GetHit(damage, gameObject.GetComponent<Bullet>());
+                DisableBullet();
+            }
         }
     }
 

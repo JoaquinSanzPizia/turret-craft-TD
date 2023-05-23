@@ -29290,6 +29290,7 @@ MonoBehaviour:
   elementPS:
   - {fileID: 6963727679761367283}
   - {fileID: 6381972449580098315}
+  poisonDmg: 0
 --- !u!135 &5882131914539826010
 SphereCollider:
   m_ObjectHideFlags: 0

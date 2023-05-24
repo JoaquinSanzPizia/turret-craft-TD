@@ -19,7 +19,7 @@ public class TurretAssembler : MonoBehaviour
     public enum LChasisTier { common, uncommon, rare, epic, legendary }
     public LChasisTier lChasisTier;
 
-    public enum UChasisType { compact, Vshape, assault }
+    public enum UChasisType { compact, Vshape, tech }
     [Header("[UPPER CHASIS]")]
     [Space]
     public UChasisType uChasisType;
@@ -94,19 +94,21 @@ public class TurretAssembler : MonoBehaviour
     void GetStats()
     {
         turretController.elementMultiplier = uChasisSO[((int)uChasisType)].elementBoosts[((int)uChasisTier)];
-        turretController.extraEffect = uChasisSO[((int)uChasisType)].extraEffect;
 
         turretController.range = lChasisSO[((int)lChasisType)].rangeMultipliers[((int)lChasisTier)] *
                                  cannonsSO[((int)cannonType)].rangeMultiplier[((int)cannonTier)];
         turretController.fireRate = lChasisSO[((int)lChasisType)].fireRateMultipliers[((int)lChasisTier)] *
                                     cannonsSO[((int)cannonType)].fireRateMultiplier[((int)cannonTier)];
 
-        turretController.damage = cannonsSO[((int)cannonType)].damage[((int)cannonTier)];
+        turretController.damage = cannonsSO[((int)cannonType)].damage[((int)cannonTier)] *
+                                    lChasisSO[((int)lChasisType)].damageMultipliers[((int)lChasisTier)];
         turretController.bulletType = cannonsSO[((int)cannonType)].bulletType;
         turretController.bulletSpeed = cannonsSO[((int)cannonType)].bulletSpeedMultiplier[((int)cannonTier)];
 
         turretController.element = (TurretController.Element)(Element)((int)element);
-        turretController.elementTier = ((int)uChasisTier);
+        turretController.uChasisTier = ((int)uChasisTier);
+
+        turretController.extraEffect = (TurretController.ExtraEffect)((int)uChasisSO[((int)uChasisType)].extraEffect);
 
         turretController.UpdateRangeSphere();
     }

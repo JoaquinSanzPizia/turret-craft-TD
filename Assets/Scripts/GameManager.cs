@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public DebuffDataSO debuffData;
+    public ElementDataSO debuffData;
+    public EffectDataSO effectData;
 
     private void Awake()
     {

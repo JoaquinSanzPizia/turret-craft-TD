@@ -32,8 +32,8 @@ MonoBehaviour:
   - 1.65
   - 2
   bulletSpeedMultiplier:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 2.5
+  - 2.5
+  - 2.5
+  - 2.5
+  - 2.5

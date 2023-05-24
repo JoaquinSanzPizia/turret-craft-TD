@@ -9,15 +9,16 @@ public class TurretController : MonoBehaviour
     [SerializeField] public List<GameObject> enemies = new List<GameObject>();
     [SerializeField] public GameObject currentTarget;
 
-    public enum Element { fire, ice, poison, lightning }
+    public enum Element { fire, ice, poison, lightning, steel }
+    public enum ExtraEffect { bonusShot, critChance, randomPierce }
     [Header("[STATS]")]
     public Element element;
+    public ExtraEffect extraEffect;
     public float bulletSpeed;
     public float range;
     public float fireRate;
     public float damage;
     public float elementMultiplier;
-    public string extraEffect;
 
     [Header("[COMPONENTS]")]
     public GameObject shootPoint;
@@ -30,7 +31,7 @@ public class TurretController : MonoBehaviour
     [SerializeField] ObjectPooler pooler;
 
     public Color bulletColor;
-    public int elementTier;
+    public int uChasisTier;
 
     float lookingAngle;
     bool canShoot;
@@ -68,15 +69,11 @@ public class TurretController : MonoBehaviour
         GameObject bullet = pooler.SpawnFromPool($"{bulletType}", shootPoint.transform.position, shootPoint.transform.rotation);
 
         Bullet bulletCs = bullet.GetComponent<Bullet>();
+
         bulletCs.damage = damage;
 
-        if (element == Element.lightning && canShock)
-        {
-            bulletCs.canShock = true;
-            canShock = false;
-
-            StartCoroutine(LightningCooldown());
-        }
+        LookForElementEffect(bulletCs);
+        LookForExtraEffect(bulletCs);  
 
         Vector3 direction = (currentTarget.transform.position - gameObject.transform.position).normalized;
 
@@ -91,9 +88,81 @@ public class TurretController : MonoBehaviour
         });
     }
 
+    void ExtraShoot()
+    {
+        currentTarget = enemies[0];
+
+        LeanTween.moveLocalY(canon, -0.025f, 0.1f).setLoopPingPong(1);
+
+        GameObject bullet = pooler.SpawnFromPool($"{bulletType}", shootPoint.transform.position, shootPoint.transform.rotation);
+
+        Bullet bulletCs = bullet.GetComponent<Bullet>();
+        bulletCs.damage = damage;
+
+        LookForElementEffect(bulletCs);
+
+        Vector3 direction = (currentTarget.transform.position - gameObject.transform.position).normalized;
+
+        bulletCs.tweenID = LeanTween.move(bullet, shootPoint.transform.position + ((direction * range) / 2), 1f / bulletSpeed).setOnComplete(() =>
+        {
+            bulletCs.DisableBullet();
+        }).uniqueId;
+    }
+
+    void LookForExtraEffect(Bullet bullet)
+    {
+        switch (extraEffect)
+        {
+            case ExtraEffect.bonusShot:
+                int bonusShotInt = Random.Range(0, 100);
+                if (bonusShotInt < GameManager.Instance.effectData.extraShotChance[uChasisTier])
+                {
+                    LeanTween.delayedCall(0.1f, () =>
+                    {
+                        ExtraShoot();
+                    });
+                }
+                break;
+
+            case ExtraEffect.critChance:
+                int critInt = Random.Range(0, 100);
+                if (critInt < GameManager.Instance.effectData.critChance[uChasisTier])
+                {
+                    bullet.damage = damage * 2f;
+                }
+                break;
+
+            case ExtraEffect.randomPierce:
+                int pierceInt = Random.Range(0, 100);
+                if (pierceInt < GameManager.Instance.effectData.pierceChance[uChasisTier])
+                {
+                    bullet.temporaryPierces = true;
+                }
+                break;
+        }
+    }
+
+    void LookForElementEffect(Bullet bullet)
+    {
+        switch(element)
+        {
+            case Element.lightning:
+                if (canShock)
+                {
+                    canShock = false;
+                    bullet.canShock = true;
+                    bullet.effectParticles[0].Play();
+                    Debug.Log("Shooting Lighning");
+
+                    StartCoroutine(LightningCooldown());
+                }
+                break;
+        }
+    }
+
     IEnumerator LightningCooldown()
     {
-        yield return new WaitForSeconds(GameManager.Instance.debuffData.lightningCooldown[elementTier]);
+        yield return new WaitForSeconds(GameManager.Instance.debuffData.lightningCooldown[uChasisTier]);
 
         canShock = true;
         Debug.Log("Lightning Ready");

@@ -9,13 +9,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e57bb3f02e12448ab2fc78d58c4db8, type: 3}
-  m_Name: VShapeUpChasis
+  m_Script: {fileID: 11500000, guid: 722b2fde5b440e941bcae26c55bf5ea2, type: 3}
+  m_Name: EffectData
   m_EditorClassIdentifier: 
-  extraEffect: 1
-  elementBoosts:
-  - 1
-  - 1.5
-  - 2.5
-  - 4
-  - 8
+  extraShotChance:
+  - 5
+  - 10
+  - 15
+  - 20
+  - 30
+  critChance:
+  - 5
+  - 10
+  - 15
+  - 20
+  - 30
+  pierceChance:
+  - 5
+  - 10
+  - 15
+  - 20
+  - 30

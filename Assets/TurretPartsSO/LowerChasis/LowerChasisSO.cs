@@ -7,4 +7,5 @@ public class LowerChasisSO : ScriptableObject
 {
     public float[] rangeMultipliers;
     public float[] fireRateMultipliers;
+    public float[] damageMultipliers;
 }

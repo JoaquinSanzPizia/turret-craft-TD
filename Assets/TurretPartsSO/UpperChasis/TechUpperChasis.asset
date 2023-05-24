@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e57bb3f02e12448ab2fc78d58c4db8, type: 3}
   m_Name: TechUpperChasis
   m_EditorClassIdentifier: 
+  extraEffect: 2
   elementBoosts:
   - 1
   - 1.5
   - 2.5
   - 4
   - 8
-  extraEffect: stun

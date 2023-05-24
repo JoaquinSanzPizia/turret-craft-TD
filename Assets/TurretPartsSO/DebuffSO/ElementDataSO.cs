@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class DebuffDataSO : ScriptableObject
+public class ElementDataSO : ScriptableObject
 {
     [Header("==FIRE==")]
     [Space]

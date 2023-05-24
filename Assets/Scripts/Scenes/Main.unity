@@ -246,15 +246,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: element
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: cannonTier
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: cannonType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: lChasisTier
@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: uChasisTier
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1359981122275099834, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: uChasisType
@@ -346,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7697217991304106645, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: element
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7697217991304106647, guid: 67d3413eb1974884eb89eb02ddca9b14, type: 3}
       propertyPath: m_Name
@@ -687,7 +687,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346292780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.251, y: 0.153, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2440,13 +2440,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: 0
-    prefab: {fileID: 5882131914539826013, guid: 95a14100c0eefc44d8b2ce8c9540868d, type: 3}
+    prefab: {fileID: 5882131914539826013, guid: fa7ddddb4b966a84d8bf226c000c8941, type: 3}
     size: 50
   - tag: 1
-    prefab: {fileID: 5882131914539826013, guid: 07496b1e4109dc144ae24f2f75e711cf, type: 3}
+    prefab: {fileID: 5882131914539826013, guid: fa7ddddb4b966a84d8bf226c000c8941, type: 3}
     size: 50
   - tag: 2
-    prefab: {fileID: 5882131914539826013, guid: fa7ddddb4b966a84d8bf226c000c8941, type: 3}
+    prefab: {fileID: 5882131914539826013, guid: b48134fdf2a21304d890448d57958638, type: 3}
     size: 50
   - tag: 3
     prefab: {fileID: 5882131914539826013, guid: b48134fdf2a21304d890448d57958638, type: 3}
@@ -3196,7 +3196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allEnemies: []
   enemyPath: {fileID: 1098179543}
-  spawnDelay: 0.5
+  spawnDelay: 1
   slimeAmount: 4
   pooler: {fileID: 1398773455}
 --- !u!4 &1763117464
@@ -3245,6 +3245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debuffData: {fileID: 11400000, guid: 9a80b0b3c097bfa428fad5116df94a73, type: 2}
+  effectData: {fileID: 11400000, guid: 06665ddf952d1f7469299805223c5adc, type: 2}
 --- !u!4 &1841006530
 Transform:
   m_ObjectHideFlags: 0

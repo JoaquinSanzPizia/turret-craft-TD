@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
     [SerializeField] SpriteRenderer model;
     [SerializeField] SphereCollider col;
     [SerializeField] ParticleSystem deathPS;
+    [SerializeField] AoESphere aoESphere;
 
     [SerializeField] float currentHealth;
     [SerializeField] float maxHealth;
@@ -75,7 +76,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
     void TriggerElementEffect(Bullet bullet)
     {
-        DebuffDataSO debuffDataSO = GameManager.Instance.debuffData;
+        ElementDataSO debuffDataSO = GameManager.Instance.debuffData;
         TurretController turret = bullet.originalParent.GetComponentInParent<TurretController>();
 
         switch (bullet.bulletElement)
@@ -118,25 +119,8 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
                 if (bullet.canShock)
                 {
-                    for (int i = 0; i < enemySpawner.allEnemies.Count; i++)
-                    {
-                        if (enemySpawner.allEnemies[i] == gameObject)
-                        {
-                            enemyIndex = i;
-                        }
-                    }
-
-                    if (enemyIndex == 0)
-                    {
-                        enemySpawner.allEnemies[enemyIndex + 1].GetComponent<Enemy>().GetHit(bullet.damage * (1 + debuffDataSO.lightningDamage[bullet.elementTier]), null);
-                        enemySpawner.allEnemies[enemyIndex + 2].GetComponent<Enemy>().GetHit(bullet.damage * (1 + debuffDataSO.lightningDamage[bullet.elementTier]), null);
-                    }
-                    else
-                    {
-                        enemySpawner.allEnemies[enemyIndex + 1].GetComponent<Enemy>().GetHit(bullet.damage * (1 + debuffDataSO.lightningDamage[bullet.elementTier]), null);
-                        enemySpawner.allEnemies[enemyIndex - 1].GetComponent<Enemy>().GetHit(bullet.damage * (1 + debuffDataSO.lightningDamage[bullet.elementTier]), null);
-                    }
-
+                    GetHit(bullet.damage * debuffDataSO.lightningDamage[bullet.elementTier], null);
+                    aoESphere.Activate(bullet.damage * debuffDataSO.lightningDamage[bullet.elementTier], 1f);
                     elementPS[2].Play();
                 }
                 break;
@@ -174,6 +158,14 @@ public class Enemy : MonoBehaviour, IPoolableObject
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "AoESphere")
+        {
+            GetHit(other.gameObject.GetComponentInParent<AoESphere>().sphereDamage, null);
+        }
+    }
+
     public void Die()
     {
         enemySpawner.allEnemies.Remove(gameObject);
@@ -189,6 +181,7 @@ public class Enemy : MonoBehaviour, IPoolableObject
         });
 
         TurretController[] turretControllers = FindObjectsOfType<TurretController>();
+
         foreach (TurretController turret in turretControllers)
         {
             turret.enemies.Remove(gameObject);

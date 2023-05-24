@@ -14,10 +14,12 @@ public class Bullet : MonoBehaviour, IPoolableObject
     public float damage;
 
     public bool pierces;
+    public bool temporaryPierces;
 
     public Color bulletColor;
     public ParticleSystem[] hitPsParts;
     public ParticleSystem[] shootMuzzle;
+    public ParticleSystem[] effectParticles;
 
     [SerializeField] SphereCollider col;
 
@@ -40,7 +42,7 @@ public class Bullet : MonoBehaviour, IPoolableObject
 
         bulletColor = turret.bulletColor;
         bulletElement = (Element)(int)turret.element;
-        elementTier = turret.elementTier;
+        elementTier = turret.uChasisTier;
 
         SetParticleAndBulletColor();
     }
@@ -69,11 +71,12 @@ public class Bullet : MonoBehaviour, IPoolableObject
         if (other.tag == "Enemy")
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            if (pierces)
+            if (pierces || temporaryPierces)
             {
                 if (enemy.alive) enemy.GetHit(damage, gameObject.GetComponent<Bullet>());
+                canShock = false;
             }
-            if (!pierces && other.gameObject == originalParent.GetComponentInParent<TurretController>().currentTarget)
+            if (!pierces && !temporaryPierces && other.gameObject == originalParent.GetComponentInParent<TurretController>().currentTarget)
             {
                 if (enemy.alive) enemy.GetHit(damage, gameObject.GetComponent<Bullet>());
                 DisableBullet();
@@ -83,6 +86,13 @@ public class Bullet : MonoBehaviour, IPoolableObject
 
     public void DisableBullet()
     {
+        foreach (ParticleSystem effectPS in effectParticles)
+        {
+            effectPS.Stop();
+        }
+
+        temporaryPierces = false;
+        canShock = false;
         trailRenderer.Clear();
         LeanTween.cancel(tweenID);
 

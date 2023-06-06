@@ -39029,7 +39029,7 @@ MonoBehaviour:
   deathPS: {fileID: 962898528787532196}
   aoESphere: {fileID: 7150195582193919147}
   currentHealth: 0
-  maxHealth: 20000
+  maxHealth: 2000
   healthBarFill: {fileID: 5882131914201978662}
   healthBar: {fileID: 5882131915332060194}
   dmgWhite: {fileID: 3477216808809435253}

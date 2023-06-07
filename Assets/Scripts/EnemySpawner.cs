@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
 
         LeanTween.move(newEnemy, enemyPath.vec3, travelTime).setOnComplete(() => 
         {
-            newEnemy.GetComponent<Enemy>().Die();
+            newEnemy.GetComponent<Enemy>().Die(false);
         });
 
         LeanTween.delayedCall(spawnDelay, () => 

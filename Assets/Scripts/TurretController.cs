@@ -92,7 +92,10 @@ public class TurretController : MonoBehaviour
     {
         currentTarget = enemies[0];
 
-        LeanTween.moveLocalY(canon, -0.025f, 0.1f).setLoopPingPong(1);
+        LeanTween.moveLocalY(canon, -0.025f, 0.1f).setOnComplete(() => 
+        {
+            LeanTween.moveLocalY(canon, 0f, 0.1f);
+        });
 
         GameObject bullet = pooler.SpawnFromPool($"{bulletType}", shootPoint.transform.position, shootPoint.transform.rotation);
 

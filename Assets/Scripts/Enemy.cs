@@ -68,9 +68,9 @@ public class Enemy : MonoBehaviour, IPoolableObject
 
         if (bullet) TriggerElementEffect(bullet);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && alive)
         {
-            Die();
+            Die(true);
         }
     }
 
@@ -166,10 +166,17 @@ public class Enemy : MonoBehaviour, IPoolableObject
         }
     }
 
-    public void Die()
+    public void Die(bool killed)
     {
-        enemySpawner.allEnemies.Remove(gameObject);
         alive = false;
+
+        if (killed)
+        {
+            GoldManager goldManager = FindObjectOfType<GoldManager>();
+            goldManager.GainGold(1f);
+        }
+
+        enemySpawner.allEnemies.Remove(gameObject);
         healthBar.SetActive(false);
         deathPS.Play();
         model.enabled = false;

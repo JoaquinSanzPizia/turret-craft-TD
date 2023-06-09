@@ -9,7 +9,7 @@ public class TurretController : MonoBehaviour
     [SerializeField] public List<GameObject> enemies = new List<GameObject>();
     [SerializeField] public GameObject currentTarget;
 
-    public enum Element { fire, ice, poison, lightning, steel }
+    public enum Element { fire, poison, lightning, steel }
     public enum ExtraEffect { bonusShot, critChance, randomPierce }
     [Header("[STATS]")]
     public Element element;
@@ -32,6 +32,7 @@ public class TurretController : MonoBehaviour
 
     public Color bulletColor;
     public int uChasisTier;
+    public int elementTier;
 
     float lookingAngle;
     bool canShoot;

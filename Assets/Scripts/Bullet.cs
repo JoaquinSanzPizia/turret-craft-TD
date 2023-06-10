@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class Bullet : MonoBehaviour, IPoolableObject
 {
-    public enum Element { fire, ice, poison, lightning, steel}
+    public enum Element { fire, poison, lightning, steel}
     public Element bulletElement;
     [SerializeField] TrailRenderer trailRenderer;
     public Transform originalParent;

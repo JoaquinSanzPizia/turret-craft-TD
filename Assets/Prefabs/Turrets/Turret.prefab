@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 699690008}
   - component: {fileID: 699690009}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BottomTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908347903}
   - component: {fileID: 908347904}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CannonTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 974881644}
   - component: {fileID: 974881645}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LaserCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052755307}
   - component: {fileID: 1052755308}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1272651004}
   - component: {fileID: 1272651005}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TechUpperChassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1556746031}
   - component: {fileID: 1556746032}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TopTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,7 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1569067329}
   - component: {fileID: 1569067330}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HeavyChasis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995458272}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 551880250006444669}
   - component: {fileID: 551880250006444668}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Element
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551880250262515945}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 551880250365801330}
   - component: {fileID: 551880250365801329}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pooler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706422296087904378}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6844165383393164761}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8626474056749238747}
   - component: {fileID: 3504109088955466084}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CompactUpperChasis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7054668567242158606}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Range
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -983,7 +983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066591449230060983}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cannons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2668741686104794388}
   - component: {fileID: 2541916755947762188}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BottomTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,7 +1102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3024417162449525871}
   - component: {fileID: 5444156445047919386}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StandartChasis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8925893483623945285}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LowerChasis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6635678568581756494}
   - component: {fileID: 3907192821860491569}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1305,7 +1305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4276672334705926010}
   - component: {fileID: 3807577613900992460}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GunCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,7 +1391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 325397799541587119}
   - component: {fileID: 985216727791692287}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TopTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1474,7 +1474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2222447040422214582}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: UpperChasis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1509,7 +1509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7697217990246329098}
   - component: {fileID: 7697217990246329099}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CannonTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1593,7 +1593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7697217990369639211}
   - component: {fileID: 7697217990369639208}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: VUpperChasis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1679,7 +1679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7697217991225960098}
   - component: {fileID: 7697217991225960101}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AssaultChasis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1767,7 +1767,7 @@ GameObject:
   - component: {fileID: 1359981122275099834}
   - component: {fileID: 6844854354445597798}
   - component: {fileID: 8405377053211502695}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1807,12 +1807,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretAssembler: {fileID: 1359981122275099834}
   enemies: []
+  currentTarget: {fileID: 0}
+  element: 0
+  extraEffect: 0
   bulletSpeed: 0
   range: 0
   fireRate: 0
   damage: 0
   elementMultiplier: 0
-  extraEffect: 
   shootPoint: {fileID: 551880250262515946}
   turretTop: {fileID: 8591016545333862903}
   canon: {fileID: 1271726036401285205}
@@ -1821,6 +1823,8 @@ MonoBehaviour:
   rangeCol: {fileID: 6844854354445597798}
   pooler: {fileID: 551880250365801329}
   bulletColor: {r: 1, g: 1, b: 1, a: 1}
+  uChasisTier: 0
+  elementTier: 0
 --- !u!114 &1359981122275099834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1845,13 +1849,6 @@ MonoBehaviour:
   - {r: 0.3915094, g: 0.9035736, b: 1, a: 1}
   - {r: 0.46396598, g: 1, b: 0.3443396, a: 1}
   - {r: 1, g: 1, b: 0.28627452, a: 1}
-  element: 2
-  lChasisType: 1
-  lChasisTier: 2
-  uChasisType: 0
-  uChasisTier: 2
-  cannonType: 0
-  cannonTier: 2
   lChasis:
   - {fileID: 4259706122132737981}
   - {fileID: 7697217991225960100}
@@ -1915,7 +1912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7697217991391805181}
   - component: {fileID: 7697217991391805178}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: WaveCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2001,7 +1998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7697217991649683735}
   - component: {fileID: 7697217991649683732}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TopTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2085,7 +2082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7697217992016780425}
   - component: {fileID: 7697217992016780422}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BottomTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2169,7 +2166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824943163448004330}
   - component: {fileID: 4555845134486726207}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CannonTierColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2252,7 +2249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2352329739802156815}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2286,7 +2283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9200551752454858505}
   - component: {fileID: 4112383988600026331}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Element
   m_TagString: Untagged
   m_Icon: {fileID: 0}

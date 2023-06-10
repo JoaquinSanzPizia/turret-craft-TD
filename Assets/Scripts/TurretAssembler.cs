@@ -47,20 +47,6 @@ public class TurretAssembler : MonoBehaviour
     [SerializeField] UpperChasisSO[] uChasisSO;
     [SerializeField] CannonSO[] cannonsSO;
 
-    [SerializeField] AssembleWindow[] assembleWindows;
-
-    public GameObject mainAssembleWindow;
-
-
-    public void AssembleTurret()
-    {
-        AssembleTurretWithIDs(assembleWindows[0].partID, assembleWindows[0].tierID,
-                              assembleWindows[1].partID, assembleWindows[1].tierID,
-                              assembleWindows[2].partID, assembleWindows[2].tierID,
-                              assembleWindows[3].partID, assembleWindows[3].tierID);
-
-        LeanTween.scale(mainAssembleWindow, Vector3.zero, 0.2f);
-    }
     public void AssembleTurretWithIDs(int lChasisID, int lChasisTier, int uChasisID, int uChasisTier, int cannonID, int cannonTier, int elementID, int elementTier)
     {
         GetVisualsWithIDs(lChasisID, lChasisTier, uChasisID, uChasisTier, cannonID, cannonTier, elementID);

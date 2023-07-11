@@ -15,7 +15,7 @@ public class TurretPlatform : MonoBehaviour
         uIturretAssembler = FindObjectOfType<UITurretAssembler>();
     }
 
-    /*private void OnMouseDown()
+    private void OnMouseDown()
     {
         if (optionsOn)
         {
@@ -27,7 +27,7 @@ public class TurretPlatform : MonoBehaviour
             ShowOptions();
             optionsOn = true;
         }
-    }*/
+    }
 
     public void OptionsButton()
     {
